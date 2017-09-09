@@ -469,7 +469,7 @@ int main(int argc, char* argv[])
 							Roi.copyTo(RoiDoubled(Rect(Roi.cols / 2, Roi.rows / 2, Roi.cols, Roi.rows)));
 							 
 
-							Point rotationCenter = Point(SmallIm.cols + 20, SmallIm.rows);
+							Point rotationCenter = Point(SmallIm.cols + ProcOptions.treshold1, SmallIm.rows);
 							Mat rotationMatrix = getRotationMatrix2D(rotationCenter, angle * -1.0, 1);
 							warpAffine(SmallImDoubled, SmallImRot, rotationMatrix, (SmallImDoubled.size()));
 							warpAffine(RoiDoubled, RoiRot, rotationMatrix, RoiDoubled.size());
